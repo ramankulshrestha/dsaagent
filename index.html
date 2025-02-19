@@ -1,267 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional financial solutions for home loans and personal loans by Kunal Vashistha Financial Solutions">
-    <meta name="keywords" content="home loan, personal loan, DSA agent, financial services, loan consultancy">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kunal Vashistha Financial Solutions | DSA Agent">
-    <meta property="og:description" content="Expert loan consultancy services with competitive rates">
-    <meta property="og:type" content="website">
-    
-    <title>Kunal Vashistha Financial Solutions | DSA Agent</title>
-    
-    <!-- CSS Styles -->
+    <title>Kunal Vashistha Financial Solutions - Loan Specialist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
     <style>
-        /* Reset and Base Styles */
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #e53e3e;
-            --text-color: #2d3748;
-            --light-bg: #f7fafc;
+            --nc-tx-1: #1a365d;
+            --nc-tx-2: #2b6cb0;
+            --nc-bg-1: #ffffff;
+            --nc-bg-2: #f7fafc;
+            --nc-lk-1: #1a365d;
+            --nc-lk-2: #2b6cb0;
         }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            scroll-behavior: smooth;
-        }
-
-        /* Header Styles */
-        .main-header {
-            background: var(--primary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .brand-logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .main-nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(rgba(26,54,93,0.9), rgba(26,54,93,0.9)),
-                        url('hero-bg.jpg') center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        .hero {
             text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(26,54,93,0.9), rgba(26,54,93,0.9));
             color: white;
-            padding: 2rem;
         }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-heading {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        /* Services Section */
-        .services-section {
-            padding: 5rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .section-heading {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-        }
-
-        .services-grid {
+        
+        .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 1rem;
+            padding: 2rem 0;
         }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 5rem 2rem;
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .submit-btn {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #c53030;
-        }
-
-        /* Footer */
-        .main-footer {
-            background: #1a202c;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .main-nav {
-                display: none;
-            }
-
-            .hero-heading {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
+        
+        @media (min-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="#" class="brand-logo">KV Financial Solutions</a>
-            <div class="main-nav">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#process" class="nav-link">Process</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </nav>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Kunal Vashistha Financial Solutions</h1>
+        <p>Expert Loan Services with Transparent Process</p>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-heading">Expert Financial Solutions for Your Loan Needs</h1>
-                <p class="hero-subheading">Competitive Rates | Fast Approvals | Professional Guidance</p>
-            </div>
-        </section>
-
-        <section class="services-section" id="services">
-            <h2 class="section-heading">Our Services</h2>
-            <div class="services-grid">
-                <article class="service-card">
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <article>
                     <h3>Home Loans</h3>
                     <ul>
-                        <li>Competitive Interest Rates</li>
-                        <li>Flexible Repayment Options</li>
-                        <li>Balance Transfer Facility</li>
+                        <li>Low Interest Rates</li>
+                        <li>Quick Processing</li>
+                        <li>Balance Transfer</li>
                     </ul>
                 </article>
-                <article class="service-card">
+                <article>
                     <h3>Personal Loans</h3>
                     <ul>
-                        <li>Instant Approval Process</li>
-                        <li>No Collateral Required</li>
-                        <li>Debt Consolidation</li>
+                        <li>Instant Approval</li>
+                        <li>Flexible Tenure</li>
+                        <li>No Collateral</li>
                     </ul>
                 </article>
             </div>
         </section>
 
-        <section class="contact-section" id="contact">
-            <h2 class="section-heading">Get Expert Consultation</h2>
-            <form class="contact-form" action="https://formspree.io/f/{your-form-id}" method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-input" name="name" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" class="form-input" name="phone" placeholder="Contact Number" required>
-                </div>
-                <button type="submit" class="submit-btn">Schedule Consultation</button>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <label>
+                    Name:
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Message:
+                    <textarea name="message" required></textarea>
+                </label>
+                <button type="submit">Send Inquiry</button>
             </form>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2023 Kunal Vashistha Financial Solutions. All rights reserved.</p>
+    <footer>
         <p>Contact: XXXXXXX | Email: contact@kvfinancials.com</p>
+        <p>© 2023 Kunal Vashistha Financial Solutions</p>
     </footer>
 </body>
 </html>
