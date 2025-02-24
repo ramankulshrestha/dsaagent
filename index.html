@@ -33,6 +33,13 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        .calculator {
+            padding: 2rem;
+            background-color: var(--nc-bg-2);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +77,30 @@
             </div>
         </section>
 
+        <section id="calculator">
+            <h2>Loan Calculator</h2>
+            <div class="calculator">
+                <form id="loan-form">
+                    <label>
+                        Loan Amount:
+                        <input type="number" id="amount" required>
+                    </label>
+                    <label>
+                        Interest Rate (%):
+                        <input type="number" id="interest" step="0.01" required>
+                    </label>
+                    <label>
+                        Loan Term (years):
+                        <input type="number" id="years" required>
+                    </label>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="results">
+                    <h3>Monthly Payment: <span id="monthly-payment"></span></h3>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>Contact Us</h2>
             <form action="https://formspree.io/f/{your-form-id}" method="POST">
@@ -94,5 +125,23 @@
         <p>Contact: XXXXXXX | Email: contact@kvfinancials.com</p>
         <p>© 2023 Kunal Vashistha Financial Solutions</p>
     </footer>
+
+    <script>
+        document.getElementById('loan-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const amount = parseFloat(document.getElementById('amount').value);
+            const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+            const years = parseFloat(document.getElementById('years').value) * 12;
+
+            const x = Math.pow(1 + interest, years);
+            const monthly = (amount * x * interest) / (x - 1);
+
+            if (isFinite(monthly)) {
+                document.getElementById('monthly-payment').textContent = monthly.toFixed(2);
+            } else {
+                document.getElementById('monthly-payment').textContent = 'Please check your inputs';
+            }
+        });
+    </script>
 </body>
 </html>
